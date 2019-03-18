@@ -13,7 +13,7 @@ server.post('/api/users', (req, res) => {
   }
   db.insert(req.body)
     .then(data => res.status(201).json({...data, name, bio}))
-    .catch(err => res.status(500).json({ error: "The users information could not be retrieved." }))
+    .catch(err => res.status(500).json({ error: "There was an error while saving the user to the database" }))
 })
 
 server.get('/api/users', (req, res) => {
