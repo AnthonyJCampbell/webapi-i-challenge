@@ -22,7 +22,7 @@ server.get('/api/users', (req, res) => {
   .catch(err => res.status(500).json({ error: "The users information could not be retrieved."}))
 })
 
-server.get('api/users/:id', (req, res) => {
+server.get('/api/users/:id', (req, res) => {
   db.findById(req.params.id)
   .then(data => res.status(200).json(data))
   .catch(err => res.status(404).json({ error: "The user with the specified ID does not exist."}))
